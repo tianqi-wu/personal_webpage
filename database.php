@@ -1,7 +1,7 @@
 <?php
 // Content of database.php
-
-$mysqli = new mysqli('localhost', 'projectUpdates', 'updateComplete', 'personalWebsite');
+// Some minor tweaks to avoid attacks.  and to do some   project   Updates
+$mysqli = new mysqli('localhost', 'projectUranus', 'updateComplete', 'personalWebsite');
 
 if($mysqli->connect_errno) {
 	printf("Connection Failed: %s\n", $mysqli->connect_error);
