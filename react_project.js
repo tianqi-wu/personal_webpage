@@ -1,5 +1,5 @@
-const Project_Element = []
-
+let Project_Element = [];
+let currentResult = "Default";
 class Projects{
   constructor(){
     this.name = ""
@@ -7,7 +7,6 @@ class Projects{
 }
 
 const default_result = (              
-
 <div className="container">
 <div className="row">
   <div className="col-lg-12">
@@ -34,26 +33,27 @@ const default_result = (
 
 
 function generateResult(data){
+  currentResult = "Default"
+  let Project_Element = [];
   let allContent = data.value.split("\n");
   for(let i = 1; i < allContent.length;i++){
     //split each of them
     let eachElement = allContent[i].split("\t");
-    
     console.log(allContent[i]);
     Project_Element.push(  <div className="container" key={i}>
     <div className="jumbotron">
                <div className="row">
                    <div className="col-md-9">
                    <div style={{borderRadius:'22px'}} style={{alignItems: 'center'}}>
-                        <h2>Project Name: &nbsp;{eachElement[1]}</h2>
+                        <h2>Project Name: &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{loadDetails(eachElement[0])}} className="btn btn-info">See more about this project</button></h2>
                         {console.log(eachElement[0])}
                         <h5>ID:  &nbsp;{eachElement[0]}</h5>
                         <p> {eachElement[3]}</p>
                         <p> {eachElement[4]}</p>
-                    </div>         
+			</div>         
                     </div>
                     <div className="col-md-3" style={{alignItems: 'center'}}>
-                    <img style={{maxWidth:'150px'}} src = {""+ eachElement[2]} alt="proje-picture"/>
+                    <img style={{maxWidth:'231px',maxHeight:'204px'}} src = {""+ eachElement[2]} alt="proje-picture"/>
                     </div>
                </div>
              </div>
@@ -62,6 +62,8 @@ function generateResult(data){
   ReactDOM.render((Project_Element.length > 0 ? Project_Element:default_result),document.getElementById('Projects-loadDataBase'))
 
 }
+
+
 
 
 function updateAjax(){
@@ -76,9 +78,57 @@ function updateAjax(){
         .then(response => response.json())
         .then(data => generateResult(data))
 }
-updateAjax()
+//Unfinished
+
+function generateDetailedResult(data){
+  Project_Element = [];
+  console.log("AA")
+  currentResult = "Detailed"
+  let allContent = data.value.split("\n");
+  for(let i = 1; i < allContent.length;i++){
+    //split each of them
+    let eachElement = allContent[i].split("\t");
+    console.log(allContent[i]);
+    Project_Element.push(  <div className="container" key={i}>
+    <div className="jumbotron">
+               <div className="row">
+                   <div className="col-md-9">
+                   <div style={{borderRadius:'22px'}} style={{alignItems: 'center'}}>
+                        <h2>Project Name: &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{currentResult = "Default"; updateAjax();}} className="btn btn-info">Return to the Projects page</button></h2>
+                        {console.log(eachElement[0])}
+                        <h5>ID:  &nbsp;{eachElement[0]}</h5>
+                        <p> {eachElement[3]}</p>
+                        <p> {eachElement[4]}</p>
+                        <p> Implementation(General):{eachElement[7]}</p>
+			</div>         
+                    </div>
+                    <div className="col-md-3" style={{alignItems: 'center'}}>
+                    <img style={{maxWidth:'231px',maxHeight:'204px'}} src = {""+ eachElement[2]} alt="proje-picture"/>
+                    </div>
+               </div>
+             </div>
+             </div>);
+  }
+  ReactDOM.render((Project_Element.length > 0 ? Project_Element:default_result),document.getElementById('Projects-loadDataBase'))
 
 
+}
+
+function loadDetails(projectId){
+  //Another PHP thing, you know
+  const data = { id: projectId };
+      fetch("update_ajax_detailed.php", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'content-type': 'application/json' }
+        })
+        .then(console.log(data))
+        .then(response => response.json())
+        .then(data => generateDetailedResult(data))
+}
 
 
-
+if(currentResult==="Default"){
+  
+updateAjax();
+}
