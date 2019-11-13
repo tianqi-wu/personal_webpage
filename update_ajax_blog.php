@@ -14,7 +14,7 @@ $date = (string) trim($json_obj['result']);
 
     require 'database.php';
                     
-	$stmt1 = $mysqli->prepare("select * from projects");
+	$stmt1 = $mysqli->prepare("select * from blog");
 	if(!$stmt1){
 		echo json_encode(array(
 			"success" => false,
@@ -28,14 +28,14 @@ $date = (string) trim($json_obj['result']);
 
 
 
-	$stmt1->bind_result($id, $name, $picture, $description_1, $description_2, $date,$project_type,$details);
+	$stmt1->bind_result($id, $name, $picture, $description_1, $description_2, $date,$blog_type,$details);
 	
 
  $value = "";
 	
 	//Not sure whether this would be OK
 	while($stmt1->fetch()){
-        $value .= "\n".$id."\t".$name."\t".$picture."\t".$description_1."\t".$description_2."\t".$date."\t".$project_type."\t".$details;
+        $value .= "\n".$id."\t".$name."\t".$picture."\t".$description_1."\t".$description_2."\t".$date."\t".$blog_type."\t".$details;
 		
 	}
 

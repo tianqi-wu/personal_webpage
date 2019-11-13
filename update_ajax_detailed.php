@@ -32,14 +32,14 @@ $id = (string) trim($json_obj['id']);
 
 
 
-	$stmt1->bind_result($id, $name, $picture, $description_1, $description_2, $date);
+	$stmt1->bind_result($id, $name, $picture, $description_1, $description_2, $date,$blog_type,$details);
 	
 
  $value = "";
 	
 	//Not sure whether this would be OK
 	while($stmt1->fetch()){
-        $value .= "\n".$id."\t".$name."\t".$picture."\t".$description_1."\t".$description_2."\t".$date;
+        $value .= "\n".$id."\t".$name."\t".$picture."\t".$description_1."\t".$description_2."\t".$date."\t".$blog_type."\t".$details;
 		
 	}
 
