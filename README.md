@@ -1,7 +1,7 @@
 # Personal Webpage
 My Personal Webpage made with Bootstrap.
 
-link: htp://tianqiwu.org
+link: http://tianqiwu.org
 
 
 Frontend: React.js
