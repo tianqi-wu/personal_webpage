@@ -2,5 +2,6 @@
 My Personal Webpage made with Bootstrap.
 
 Frontend: React.js
-Backend: PHP + MySQL(Ajax Embedded)
+Backend: PHP + MySQL
+Implemented with AJAX
 
