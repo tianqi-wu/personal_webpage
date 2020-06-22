@@ -1,11 +1,10 @@
 # Personal Webpage
-My Personal Webpage made with Bootstrap.
+My Personal Webpage, updated frequently.
 
 link: http://tianqiwu.org
 
 
-Frontend: React.js
-Backend: PHP + MySQL
+Frontend: Bootstrap & React.js
+Backend: PHP & MySQL
 
-Implemented with AJAX
 
