@@ -48,7 +48,7 @@ function generateResult(data){
                         <h2> &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{loadDetails(eachElement[0])}} className="btn btn-info">See more about this experience</button></h2>
                         {console.log(eachElement[0])}
                         <h5>ID:  &nbsp;{eachElement[0]}</h5>
-                        <p> {eachElement[3]}</p>x
+                        <p> {eachElement[3]}</p>
                         <p> {eachElement[4]}</p>
 			</div>         
                     </div>
