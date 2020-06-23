@@ -99,7 +99,7 @@ function generateDetailedResult(data){
                         <h5>ID:  &nbsp;{eachElement[0]}</h5>
                         <p> {eachElement[3]}</p>
                         <p> {eachElement[4]}</p>
-                        <p> Implementation(General):{eachElement[7]}</p>
+                        <p> Responsibilities(General):{eachElement[7]}</p>
 			</div>         
                     </div>
                     <div className="col-md-3" style={{alignItems: 'center'}}>
