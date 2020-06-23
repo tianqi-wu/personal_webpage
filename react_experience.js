@@ -45,10 +45,10 @@ function generateResult(data){
                <div className="row">
                    <div className="col-md-9">
                    <div style={{borderRadius:'22px'}} style={{alignItems: 'center'}}>
-                        <h2>Project Name: &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{loadDetails(eachElement[0])}} className="btn btn-info">See more about this project</button></h2>
+                        <h2> &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{loadDetails(eachElement[0])}} className="btn btn-info">See more about this project</button></h2>
                         {console.log(eachElement[0])}
                         <h5>ID:  &nbsp;{eachElement[0]}</h5>
-                        <p> {eachElement[3]}</p>
+                        <p> {eachElement[3]}</p>x
                         <p> {eachElement[4]}</p>
 			</div>         
                     </div>
@@ -94,7 +94,7 @@ function generateDetailedResult(data){
                <div className="row">
                    <div className="col-md-9">
                    <div style={{borderRadius:'22px'}} style={{alignItems: 'center'}}>
-                        <h2>Project Name: &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{currentResult = "Default"; updateAjax();}} className="btn btn-info">Return to the Projects page</button></h2>
+                        <h2> &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{currentResult = "Default"; updateAjax();}} className="btn btn-info">Return to the Experience page</button></h2>
                         {console.log(eachElement[0])}
                         <h5>ID:  &nbsp;{eachElement[0]}</h5>
                         <p> {eachElement[3]}</p>
