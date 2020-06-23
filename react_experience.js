@@ -45,7 +45,7 @@ function generateResult(data){
                <div className="row">
                    <div className="col-md-9">
                    <div style={{borderRadius:'22px'}} style={{alignItems: 'center'}}>
-                        <h2> &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{loadDetails(eachElement[0])}} className="btn btn-info">See more about this project</button></h2>
+                        <h2> &nbsp;{eachElement[1]}                      <button id={eachElement[0]} onClick={() =>{loadDetails(eachElement[0])}} className="btn btn-info">See more about this experience</button></h2>
                         {console.log(eachElement[0])}
                         <h5>ID:  &nbsp;{eachElement[0]}</h5>
                         <p> {eachElement[3]}</p>x
